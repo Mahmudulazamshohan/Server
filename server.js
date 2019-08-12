@@ -31,8 +31,8 @@ app.get('/',(req,res)=>{
 
 
 
-app.use(function (err,req,res,next) {  
-    if(err.code !== 'EBADCSRFTOKEN') { 
+app.use(function (err,req,res,next) {
+    if(err.code !== 'EBADCSRFTOKEN') {
         return next(err);
     }
     res.status(404);
@@ -46,8 +46,8 @@ app.use(session({
     secret: 'shohan',
     resave: false,
     saveUninitialized: false,
-    cookie: { 
-      secure: false 
+    cookie: {
+      secure: false
    }
   }));
 
